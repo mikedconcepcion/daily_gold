@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} | Momentum FX</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="stylesheet" href="../static/css/styles.css"> <!-- Fallback for nested pages if naive linking -->
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <script src="static/js/pwa.js" defer></script>
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <!-- Expecting logo at public/static/images/logo.png -->
+            <img src="static/images/logo.png" alt="Momentum FX Logo" class="logo-img">
+            <h1 class="site-title">Daily Gold</h1>
+            <button id="installAppBtn" class="install-btn">📲 Install App</button>
+        </div>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <div
+            style="max-width: 800px; margin: 2rem auto; padding: 1rem; border-top: 1px solid var(--border-color); text-align: center; color: var(--text-secondary); font-size: 0.8rem;">
+            <p style="margin-bottom: 0.5rem;">
+                <strong>⚠️ Disclaimer</strong>
+            </p>
+            <p>
+                Momentum FX Team content is for informational and educational purposes only—not financial advice.
+                Gold trading carries substantial risk. Past performance ≠ future results.
+                Manage your risk. Trade responsibly.
+            </p>
+            <p style="margin-top: 1rem; opacity: 0.6;">
+                &copy; 2025 Momentum FX Team.
+            </p>
+        </div>
+    </footer>
+</body>
+
+</html>

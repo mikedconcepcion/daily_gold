@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block content %}
+<a href="index.html" class="back-link">← Back to Dashboard</a>
+
+<article>
+    <header style="margin-bottom: 2rem; text-align: center; padding-bottom: 1rem;">
+        <h1 style="font-size: 3rem; margin-bottom: 0.5rem; color: var(--accent-gold);">{{ post.title }}</h1>
+        <div class="report-meta">
+            <span>{{ post.date }}</span>
+            <span>•</span>
+            <span>{{ post.session }}</span>
+        </div>
+    </header>
+
+    {% if post.fear_factor %}
+    <div class="sticky-meter">
+        <div class="fear-wrapper">
+            <div class="fear-score-big" style="font-size: 2.5rem;">{{ post.fear_score }}</div>
+            <div class="fear-label">{{ post.fear_label }}</div>
+
+            <div class="fear-bar-bg">
+                <div class="fear-bar-fill" style="width: {{ post.fear_percent }}%;"></div>
+            </div>
+
+            <div class="fear-scale-labels">
+                <span>FEAR</span>
+                <span>NEUTRAL</span>
+                <span>GREED</span>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <div class="post-container">
+        <!-- Main content centered, sidebar removed -->
+        <div class="main-content content" style="width: 100%; max-width: 800px; margin: 0 auto;">
+            {{ post.content | safe }}
+        </div>
+    </div>
+</article>
+{% endblock %}

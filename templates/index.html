@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2
+    style="border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-bottom: 2rem; text-align: center; color: var(--text-secondary); text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px;">
+    Latest Intelligence</h2>
+
+{% for post in posts %}
+<article class="report-card">
+    <div class="report-meta">
+        <span>{{ post.date }}</span>
+        <span>•</span>
+        <span>{{ post.session }}</span>
+    </div>
+    <a href="{{ post.filename }}" class="report-title-link">
+        <h3 class="report-title">{{ post.title }}</h3>
+    </a>
+    <p
+        style="color: var(--text-secondary); margin-bottom: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+        {{ post.snippet }}
+    </p>
+    <a href="{{ post.filename }}" class="read-more-btn">
+        Read Full Briefing
+    </a>
+</article>
+{% endfor %}
+{% endblock %}
