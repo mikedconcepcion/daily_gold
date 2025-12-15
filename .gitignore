@@ -6,8 +6,8 @@ venv/
 .env
 
 # Generators
-public/
-!public/static/images/logo.png
+# public/  <-- Unignored for gh-pages deployment
+# !public/static/images/logo.png
 # We might want to track public if we deploy via docs folder, 
 # but for gh-pages branch method, we usually build it. 
 # However, if user wants "serve in their pages", committing public might be easiest for them if they use /docs method.
