@@ -1,7 +1,8 @@
 {
   "name": "Daily Gold Reports",
   "short_name": "Daily Gold",
-  "start_url": "index.html",
+  "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
   "background_color": "#050505",
   "theme_color": "#050505",
